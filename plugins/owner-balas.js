@@ -17,7 +17,7 @@ handler.help = ['balas'].map(v => v + ' [nomor] [teks]')
 handler.tags = ['owner']
 handler.command = /^(balas|reply)/i
 
-handler.mods = true
+handler.owner = true
 
 handler.fail = null
 
