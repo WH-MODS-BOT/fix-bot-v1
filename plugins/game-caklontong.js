@@ -1,6 +1,6 @@
 import { caklontong } from '@bochilteam/scraper'
 
-let timeout = 120000
+let timeout = 60000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
     conn.caklontong = conn.caklontong ? conn.caklontong : {}
