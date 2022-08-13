@@ -1,5 +1,4 @@
 import fetch from 'node-fetch'
-let fetch = require('node-fetch')
 let bts = []
 fetch ('https://raw.githubusercontent.com/arivpn/dbase/master/kpop/batues.txt')
     .then(res => res.text())
