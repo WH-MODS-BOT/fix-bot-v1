@@ -136,8 +136,8 @@ const listMessage = {
 }
 switch (type) {
     case 'sound12':
-sound = fs.readFileSync('Sound/sound12.mp3')
-coon.sendMessage(from, sound, MessageType.audio, {quoted: m, mimetype: 'audio/mp4', ptt: false})
+whmods = fs.readFileSync('mp3/sound12.mp3')
+conn.sendFile(m.chat, whmods, '', '', m, true)
 break
 
     default:
