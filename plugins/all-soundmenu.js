@@ -135,6 +135,11 @@ const listMessage = {
   sections
 }
 switch (type) {
+    case 'sound12':
+sound = fs.readFileSync('Sound/sound12.mp3')
+coon.sendMessage(from, sound, MessageType.audio, {quoted: m, mimetype: 'audio/mp4', ptt: false})
+break
+
     default:
     if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
     throw false
