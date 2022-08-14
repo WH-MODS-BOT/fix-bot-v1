@@ -190,6 +190,6 @@ const listMessage = {
 
 handler.help = ['soundmenu']
 handler.tags = ['fun']
-handler.command = /^(soundmenu)$/i
+handler.command = ['soundmenu']
 
 export default handler
