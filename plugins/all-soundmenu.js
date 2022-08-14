@@ -1,9 +1,28 @@
-let handler = async (m, { conn, usedPrefix, command }) => {
-	const sections = [
+let { MessageType } = (await import('@adiwajshing/baileys')).default
+
+let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
+  let type = (args[0] || '').toLowerCase()
+  let _type = (args[0] || '').toLowerCase()
+
+//------- NOMOR
+  let nowner = `${nomorown.split`@`[0]}@s.whatsapp.net`
+  let teksnomor = `${htki} *OWNER* ${htka}
+✦ @${nomorown.split`@`[0]} ✦
+------- ${nameown} -------
+
+📮 *Note:*
+• Owner tidak menerima save contact
+• Owner berhak blockir tanpa alasan
+• Berbicaralah yang sopan & tidak spam
+• Owner Hanya merespon yang berkaitan dengan BOT
+• No Telp`
+
+  let teks = 'Pilih dibawah kak ! o(〃＾▽＾〃)o'
+const sections = [
    {
-	title: `${dmenub} List Options`,
+	title: `${htjava} SOUND MENU –––––––––·•`,
 	rows: [
-	{title: "Sound Ultah", rowId: ".soundultah"},
+    {title: "Sound Ultah", rowId: ".soundultah"},
 	{title: "Sound 1", rowId: ".sound1"},
     {title: "Sound 2", rowId: ".sound2"},
 	{title: "Sound 3", rowId: ".sound3"},
@@ -123,29 +142,54 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 	{title: "Sound 117", rowId: ".sound117"},
 	{title: "Sound 118", rowId: ".sound118"},
 	{title: "Sound 119", rowId: ".sound119"},
+]
+    },{
+	title: `${htjava} SUPPORT ME –––––––·•`,
+	rows: [
+	    {title: "💹 • Donasi", rowId: ".owner nomor"},
+	{title: "🔖 • Sewa", rowId: ".sewa"},
+	{title: "🌟 • Buy Premium", rowId: ".premium"},
 	]
-    },
+  },
 ]
 
 const listMessage = {
-  text: ' ',
-  footer: botdate,
-  title: `*${htki} SOUND MENU OPTIONS ${htka}*`,
-  buttonText: "Click Here!",
+  text: teks,
+  footer: null,
+  title: `${htki} *OWNER* ${htka}`,
+  buttonText: "Click Here !",
   sections
 }
-switch (type) {
-    case 'sound12':
-whmods = fs.readFileSync('mp3/sound12.mp3')
-conn.sendFile(m.chat, whmods, '', '', m, true)
-break
 
-    default:
-    if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
-    throw false
+  try {
+    if (/(creator|owner)/i.test(command)) {
+      const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
+        switch (type) {
+          case 'nomor':
+          conn.reply(m.chat, teksnomor, m, { contextInfo: { mentionedJid: [nowner] }})
+            break
+          default:
+            return await conn.sendMessage(m.chat, listMessage, m, { contextInfo: { mentionedJid: [m.sender] }})
+        }
+    } else if (/enchant|enchan/i.test(command)) {
+      const count = args[2] && args[2].length > 0 ? Math.min(99999999, Math.max(parseInt(args[2]), 1)) : !args[2] || args.length < 4 ? 1 :Math.min(1, count)
+      switch (_type) {
+        case 't':
+          break
+        case '':
+          break
+
+        default:
+          return conn.sendButton( m.chat, caption, wm, null, [`⋮☰ Menu`, `.menu`], m)
+      }
+    }
+  } catch (err) {
+    m.reply("Error\n\n\n" + err.stack)
+  }
 }
-}
+
 handler.help = ['soundmenu']
+handler.tags = ['fun']
 handler.command = /^(soundmenu)$/i
 
 export default handler
