@@ -156,7 +156,7 @@ const sections = [
 const listMessage = {
   text: teks,
   footer: null,
-  title: `${htki} *OWNER* ${htka}`,
+  title: `${htki} *SOUND MENU* ${htka}`,
   buttonText: "Click Here !",
   sections
 }
