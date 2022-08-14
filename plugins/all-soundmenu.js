@@ -188,8 +188,9 @@ const listMessage = {
   }
 }
 
+handler.command = ['soundmenu']
 handler.help = ['soundmenu']
 handler.tags = ['fun']
-handler.command = ['soundmenu']
+
 
 export default handler
