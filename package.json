@@ -1,7 +1,7 @@
 {
-    "name": "Putri-Cantik",
+    "name": "wh-mods-dev",
     "version": "3.0.0",
-    "description": "WhatsApp BOT By Putri",
+    "description": "WhatsApp BOT By wahid",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -26,20 +26,20 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Bl4ck-lion/kannaxyui",
+    "homepage": "https://github.com/Wahidhidayatulla/fix-bot-v1",
     "author": {
-        "name": "Bl4ck-lion"
+        "name": "Wahidhidayatulla"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Bl4ck-lion/kannaxyui"
+        "url": "git+https://github.com/Wahidhidayatulla/fix-bot-v1"
     },
     "bugs": {
-        "url": "https://github.com/Bl4ck-lion/kannaxyui"
+        "url": "https://github.com/Wahidhidayatulla/fix-bot-v1/"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "4.3.0",
+        "@adiwajshing/baileys": "github:adiwajshing/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^2.0.0",
         "awesome-phonenumber": "^2.68.0",
