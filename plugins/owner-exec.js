@@ -18,7 +18,7 @@ let handler = async (m, _2) => {
     let f = {
       exports: {}
     }
-    let exec = new (async () => { }).constructor('print', 'm', 'handler', 'require', 'conn', 'Array', 'process', 'args', 'groupMetadata', 'module', 'exports', 'argument', _text)
+    let exec = new (async () => { }).constructor('print', 'EVAL','m', 'handler', 'require', 'conn', 'Array', 'process', 'args', 'groupMetadata', 'module', 'exports', 'argument', _text)
     _return = await exec.call(conn, (...args) => {
       if (--i < 1) return
       console.log(...args)
