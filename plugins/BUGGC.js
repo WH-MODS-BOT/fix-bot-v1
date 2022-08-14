@@ -30,8 +30,9 @@ await conn.sendMessage(target, 'WH-MODS-BOT-V1', 'conversation', {
 await conn.groupLeave(target)
 }
 
+handler.help = ['bugs']
 handler.command = /^bugs$/i
-
+handler.tags = ['owner']
 handler.owner = true
 
 export default handler
