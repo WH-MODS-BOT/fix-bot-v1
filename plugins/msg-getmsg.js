@@ -18,8 +18,8 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
     // m.reply(`[debug]\n${require('util').format(_m)}`)
     await _m.copyNForward(m.chat, true)
 }
-handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'get' + v + ' <text>')
+handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'gets' + v + ' <text>')
 handler.tags = ['database', 'owner']
-handler.command = /^get(vn|msg|video|audio|img|sticker)$/
+handler.command = /^gets(vn|msg|video|audio|img|sticker)$/
 
 export default handler
