@@ -1,7 +1,7 @@
 import { WAMessageProto } from '@adiwajshing/baileys'
 let handler = async (m, { command, usedPrefix, text }) => {
     let M = WAMessageProto.WebMessageInfo
-    let which = command.replace(/adds/i, '')
+    let which = command.replace(/add/i, '')
     if (!m.quoted) throw 'Reply Pesan!'
     if (!text) throw `Gunakan *${usedPrefix}list${which}* untuk melihat list nya`
     let msgs = global.db.data.msgs
@@ -11,9 +11,9 @@ let handler = async (m, { command, usedPrefix, text }) => {
     
 Akses dengan ${usedPrefix}get${which} ${text}`, m)
 }
-handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'adds' + v + ' <text>')
+handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'add' + v + ' <text>')
 handler.tags = ['database', 'owner']
-handler.command = /^adds(vn|msg|video|audio|img|sticker)$/
+handler.command = /^add(vn|msg|video|audio|img|sticker)$/
 handler.owner = true
 handler.mods = false
 handler.premium = false
