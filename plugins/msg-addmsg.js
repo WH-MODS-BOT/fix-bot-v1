@@ -1,7 +1,7 @@
 import { WAMessageProto } from '@adiwajshing/baileys'
 let handler = async (m, { command, usedPrefix, text }) => {
     let M = WAMessageProto.WebMessageInfo
-    let which = command.replace(/add/i, '')
+    let which = command.replace(/adds/i, '')
     if (!m.quoted) throw 'Reply Pesan!'
     if (!text) throw `Gunakan *${usedPrefix}list${which}* untuk melihat list nya`
     let msgs = global.db.data.msgs
