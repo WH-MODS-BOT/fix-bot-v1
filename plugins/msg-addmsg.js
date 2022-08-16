@@ -7,13 +7,13 @@ let handler = async (m, { command, usedPrefix, text }) => {
     let msgs = global.db.data.msgs
     if (text in msgs) throw `'${text}' telah terdaftar di list pesan`
     msgs[text] = M.fromObject(await m.getQuotedObj()).toJSON()
-    m.reply(`Berhasil menambahkan pesan di list pesan sebagai '${text}'
+    conn.reply(m.chat,`Berhasil menambahkan pesan di list pesan sebagai '${text}'
     
-Akses dengan ${usedPrefix}get${which} ${text}`)
+Akses dengan ${usedPrefix}get${which} ${text}`, m)
 }
-handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'add' + v + ' <text>')
+handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'adds' + v + ' <text>')
 handler.tags = ['database', 'owner']
-handler.command = /^add(vn|msg|video|audio|img|sticker)$/
+handler.command = /^adds(vn|msg|video|audio|img|sticker)$/
 handler.owner = true
 handler.mods = false
 handler.premium = false
