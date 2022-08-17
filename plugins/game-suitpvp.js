@@ -16,7 +16,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]}
 `.trim()
   let footer = `Ketik "terima/ok/gas" untuk memulai suit\nKetik "tolak/gabisa/nanti" untuk menolak`
   conn.suit[id] = {
-    chat: await conn.send2But(m.chat, caption, footer, 'Terima', 'ok', 'Tolak', 'tolak', m, { contextInfo: { mentionedJid: conn.parseMention(caption) } }),
+    chat: await conn.sendButton(m.chat, caption, footer, 'Terima', 'ok', 'Tolak', 'tolak', m, { contextInfo: { mentionedJid: conn.parseMention(caption) } }),
     id: id,
     p: m.sender,
     p2: m.mentionedJid[0],
