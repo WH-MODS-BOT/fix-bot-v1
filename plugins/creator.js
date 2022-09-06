@@ -29,7 +29,7 @@ ${htjava} *🎨 Umur* : 18
 ${htjava} *🧮 Kelas* : SUDAH TAMAT
 ${htjava} *🧩 Hobby* : MODIFIKASI WHATSAPP "MODDER WHATSAPP"
 ${htjava} *💬 Sifat* : ASIK DAH KALAU DAH KENAL
-${htjava} *🗺️ Tinggal* : Indo, Depok, Jawa Timur
+${htjava} *🗺️ Tinggal* : Indo, Depok, Jawa Barat
 ${htjava} *❤️ Waifu* : -
 
 ${htjava} *📷 ɪɴsᴛᴀɢʀᴀᴍ* : ${sig}
@@ -71,7 +71,12 @@ const listMessage = {
           conn.reply(m.chat, teksnomor, m, { contextInfo: { mentionedJid: [nowner] }})
             break
             case 'bio':
-          conn.sendHydrated(m.chat, teksbio, wm, ppown, sig, "📷 Instagram", nomorown, '🌹 Nomor', [[null, null], [null, null],[null,null]], m)
+          //conn.sendHydrated(m.chat, teksbio, wm, ppown, sig, "📷 Instagram", nomorown, '🌹 Nomor', [[null, null], [null, null],[null,null]], m)
+
+          conn.sendButton(m.chat, teksbio, author, ppown, [
+                ['Sewa Bot', `${usedPrefix}sewa`],
+                ['Menu', `${usedPrefix}menu`],
+            ], m)
             break
             
           default:
