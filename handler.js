@@ -46,7 +46,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.exp))
                     user.exp = 0
                 if (!isNumber(user.limit))
-                    user.limit = 10
+                    user.limit = 100
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!isNumber(user.pasangan))
@@ -190,6 +190,8 @@ export async function handler(chatUpdate) {
                     user.lastmonthly = 0
                 if (!isNumber(user.lastbunga))
                     user.lastbunga = 0
+                if (!isNumber(user.note))
+                    user.note = 0
                     
                 if (!isNumber(user.premium))
                     user.premium = false
@@ -200,7 +202,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 10,
+                    limit: 100,
                     lastclaim: 0,
                     registered: false,
                     name: m.name,
@@ -272,6 +274,7 @@ export async function handler(chatUpdate) {
                     lastweekly: 0,
                     lastmonthly: 0,
                     lastbunga: 0,
+                    note: 0,
                     
                     premium: false,
                     premiumTime: 0,
@@ -335,11 +338,13 @@ export async function handler(chatUpdate) {
                 if (!('self' in settings)) settings.self = false
                 if (!('autoread' in settings)) settings.autoread = true
                 if (!('restrict' in settings)) settings.restrict = true
+                if (!('jadibot' in settings)) settings.jadibot = false
                 if (!('autorestart' in settings)) settings.autorestart = true
                 if (!('restartDB' in settings)) settings.restartDB = 0
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
                 autoread: true,
+                jadibot: false,
                 restrict: true,
                 autorestart: true,
                 restartDB: 0
@@ -532,7 +537,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.reply(m.chat, `[❗] Limit anda habis, silahkan beli melalui *${usedPrefix}buy limit*`, m)
+                    this.reply(m.chat, `[❗] Limit kau abis dek, beli melalui *${usedPrefix}buy limit*`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
@@ -592,7 +597,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if (m.limit)
-                        m.reply(+m.limit + ' Limit terpakai ✔️')
+                        m.reply(+m.limit + ' ʟɪᴍɪᴛ ᴛᴇʀᴘᴀᴋᴀɪ ✔️')
                 }
                 break
             }
@@ -672,32 +677,42 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let pp = './src/avatar_contact.png'
+                    let pp = 'https://telegra.ph/file/2d06f0936842064f6b3bb.png'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
                     } catch (e) {
                     } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', `${this.getName(user)}`)
-                        let wel = API('hardianto', '/api/welcomer2', {
+                        let wel = API('males', '/welcome2', {
                                 profile: pp,
-                                name: await this.getName(user),
-                                bg: 'https://telegra.ph/file/46b7a95313dbb01b8ac43.jpg',
-                                namegb: await this.getName(id),
-                                member: groupMetadata.participants.length
+                                username: await this.getName(user),
+                                background: 'https://telegra.ph/file/0b814069d86ee9a022da5.jpg',
+                                groupname: await this.getName(id),
+                                membercount: groupMetadata.participants.length
                             })
-                            let lea = API('hardianto', '/api/goodbye3', {
+                            let lea = API('males', '/goodbye3', {
                                 profile: pp,
-                                name: await this.getName(user),
-                                bg: 'https://telegra.ph/file/a4afb7d0c165e4314bd8c.jpg',
-                                namegb: await this.getName(id),
-                                member: groupMetadata.participants.length
+                                username: await this.getName(user),
+                                background: 'https://telegra.ph/file/0db212539fe8a014017e3.jpg',
+                                groupname: await this.getName(id),
+                                membercount: groupMetadata.participants.length
                             })
-    this.sendHydrated(id, text, '➞' + await this.getName(id), await (await fetch((action == 'add' ? wel : lea))).buffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], '🌹 USER', [
+    conn.sendButtonDoc(id, text, wm, action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'WHMODSDEV', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
+    mediaUrl: "https://www.youtube.com/channel/UCMx4e8anOq_Olt2nMSv0Cow",
+    mediaType: 2, 
+    description: "https://www.youtube.com/channel/UCMx4e8anOq_Olt2nMSv0Cow", 
+    title: 'WH-MODS-BOT-V1-MultiDevice',
+    body: wm,
+    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
+    sourceUrl: sgc
+     }}
+  })
+/*this.sendHydrated(id, text, '➞' + await this.getName(id), await (await fetch((action == 'add' ? wel : lea))).buffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], '🌹 USER', [
       ['ᴍᴇɴᴜ', '/menu'],
       [(action == 'add' ? '\n\nYAELAH BEBAN GROUP NAMBAH 1 :(' : '\n\nBYE BEBAN! :)'), '...'],
       [null, null]
-    ], null, false, { mentions: [user] })
+    ], null, false, { mentions: [user] }) */
                     }
                 }
             }
