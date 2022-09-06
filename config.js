@@ -1,19 +1,3 @@
-// S C R I P T  O R I  B Y  @BochilGaming 🔭
-// M A D E  B Y  Letta - Sama 🐰  
-// Credits, jangan dihapus atau diubah!
-
-// - - THANKS TO - -
-// • Allah SWT
-// • Nurutomo
-// • Bochilgaming
-// • Rominaru
-// • Kannachann
-// • The.Sad.Boy01
-// • Rasel comel
-// • ImYanXiao
-// • Xtreshe (Beban)
-// • Dll
-
 //[!] Jangan Dihapus, mending ditambahin 
 
 import { watchFile, unwatchFile } from 'fs'
@@ -67,6 +51,10 @@ global.nomorown = '6282127487538'
 global.namebot = 'WH-MODS-BOT-V1'
 global.nameown = 'WH MODS DEV'
 
+/*============== APIKEY SIMPEL ==============*/
+global.zenzkey = 'b8040941f7'
+global.lolkey = '8e66d0934cf741bfd2182c16' // PUNYA WAHID 357d3c85079c4e0818731e6b
+
 
 /*============== STAFF ==============*/
 global.owner = [
@@ -98,7 +86,9 @@ global.APIs = { // API Prefix
   botstyle: 'https://botstyle-api.herokuapp.com',
   adiisus: 'https://adiixyzapi.herokuapp.com',
   kanx: 'https://kannxapi.herokuapp.com/', 
-  violetics : 'https://violetics.pw'
+  violetics : 'https://violetics.pw',
+  ziy : 'https://ziy.herokuapp.com',
+  males : 'https://malesin.xyz'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
@@ -113,7 +103,8 @@ global.APIKeys = { // APIKey Here
   'https://server-api-rey.herokuapp.com': 'apirey',
   'https://botstyle-api.herokuapp.com': 'Apikeymu',
   'https://hardianto.xyz': 'hardianto',
-  'https://violetics.pw': 'beta'
+  'https://violetics.pw': 'beta',
+  'https://ziy.herokuapp.com' : 'xZiyy'
 }
 // Kata APIKEY itu isi dengan apikey lu sendiri, dengan beli ke website itu
 
@@ -133,6 +124,12 @@ global.imagebot = 'https://i.ibb.co/XZrK6yQ/transformers.jpg'
 global.giflogo = 'https://telegra.ph/file/a46ab7fa39338b1f54d5a.mp4'
 global.thumbs = ['https://i.ibb.co/XZrK6yQ/transformers.jpg']
 global.fla = 'https://i.ibb.co/XZrK6yQ/transformers.jpg'
+global.flaaa2 = [
+'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
+'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=',
+'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=',
+'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
+'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text=']
 
 /*============== HENTAI ==============*/ 
 //OPTIONS
@@ -202,38 +199,66 @@ global.rpg = {
   emoticon(string) {
     string = string.toLowerCase()
     let emot = {
-      level: '📊',
-      limit: '🎫',
-      health: '❤️',
-      exp: '✨',
-      money: '💹',
-      bank: '🏦',
-      potion: '🥤',
-      diamond: '💎',
-      common: '📦',
-      uncommon: '🛍️',
-      mythic: '🎁',
-      legendary: '🗃️',
-      superior: '💼',
-      pet: '🔖',
-      trash: '🗑',
+      agility: '🤸‍♂️',
+      arc: '🏹',
       armor: '🥼',
-      sword: '⚔️',
-      pickaxe: '⛏️',
+      bank: '🏦',
+      bibitanggur: '🍇',
+      bibitapel: '🍎',
+      bibitjeruk: '🍊',
+      bibitmangga: '🥭',
+      bibitpisang: '🍌',
+      bow: '🏹',
+      bull: '🐃',
+      cat: '🐈',
+      chicken: '🐓',
+      common: '📦',
+      cow: '🐄',
+      crystal: '🔮',
+      darkcrystal: '♠️',
+      diamond: '💎',
+      dog: '🐕',
+      dragon: '🐉',
+      elephant: '🐘',
+      emerald: '💚',
+      exp: '✉️',
       fishingrod: '🎣',
-      wood: '🪵',
-      rock: '🪨',
-      string: '🕸️',
-      horse: '🐴',
-      cat: '🐱',
-      dog: '🐶',
       fox: '🦊',
-      petFood: '🍖',
+      gems: '🍀',
+      giraffe: '🦒',
+      gold: '👑',
+      health: '❤️',
+      horse: '🐎',
+      intelligence: '🧠',
       iron: '⛓️',
-      gold: '🪙',
-      emerald: '❇️',
-      upgrader: '🧰'
-      
+      keygold: '🔑',
+      keyiron: '🗝️',
+      knife: '🔪',
+      legendary: '🗃️',
+      level: '🧬',
+      limit: '🌌',
+      lion: '🦁',
+      magicwand: '⚕️',
+      mana: '🪄',
+      money: '💵',
+      mythic: '🗳️',
+      pet: '🎁',
+      petFood: '🍖',
+      pickaxe: '⛏️',
+      pointxp: '📧',
+      potion: '🥤',
+      rock: '🪨',
+      snake: '🐍',
+      stamina: '⚡',
+      strength: '🦹‍♀️',
+      string: '🕸️',
+      superior: '💼',
+      sword: '⚔️',
+      tiger: '🐅',
+      trash: '🗑',
+      uncommon: '🎁',
+      upgrader: '🧰',
+      wood: '🪵'
     }
     let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
     if (!results.length) return ''
