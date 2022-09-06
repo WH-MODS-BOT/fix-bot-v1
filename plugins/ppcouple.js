@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+/* import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
   let res = await fetch(global.API('LeysCoder', '/api/ppcouple', {}, 'apikey'))
@@ -13,4 +13,4 @@ handler.tags = ['internet']
 handler.command = /^(pp(cp|couple))$/i
 handler.limit = true
 
-export default handler
+export default handler */
