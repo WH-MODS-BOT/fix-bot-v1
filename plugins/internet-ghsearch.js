@@ -45,3 +45,4 @@ function formatDate(n, locale = 'id') {
         second: 'numeric'
     })
 }
+
