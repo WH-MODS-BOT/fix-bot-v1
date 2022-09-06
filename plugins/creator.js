@@ -73,9 +73,9 @@ const listMessage = {
             case 'bio':
           //conn.sendHydrated(m.chat, teksbio, wm, ppown, sig, "📷 Instagram", nomorown, '🌹 Nomor', [[null, null], [null, null],[null,null]], m)
 
-          conn.sendButton(m.chat, teksbio, author, ppown, [
+          conn.sendButton(m.chat, teksbio, wm, ppown, [
                 ['Sewa Bot', `${usedPrefix}sewa`],
-                ['Menu', `${usedPrefix}menu`],
+                ['Menu', `${usedPrefix}menu`]
             ], m)
             break
             
