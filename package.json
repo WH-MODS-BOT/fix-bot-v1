@@ -26,16 +26,16 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Wahidhidayatulla/fix-bot-v1",
+    "homepage": "https://github.com/WH-MODS-BOT/fix-bot-v1",
     "author": {
-        "name": "Wahidhidayatulla"
+        "name": "WH-MODS-BOT"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Wahidhidayatulla/fix-bot-v1"
+        "url": "git+https://github.com/WH-MODS-BOT/fix-bot-v1"
     },
     "bugs": {
-        "url": "https://github.com/Wahidhidayatulla/fix-bot-v1/"
+        "url": "https://github.com/WH-MODS-BOT/fix-bot-v1/"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
