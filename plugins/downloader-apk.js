@@ -8,7 +8,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 	conn.sendMessage(m.chat, { document: { url: res.download }, mimetype: res.mimetype, fileName: res.fileName }, { quoted: m })
 }
 handler.help = handler.alias = ['apkdl']
-handler.tags = ['downloader']
+handler.tags = ['downloader', 'limitmenu']
 handler.command = /^(apkdl)$/i
 handler.limit = true
 export default handler
