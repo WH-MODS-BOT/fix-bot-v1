@@ -11,20 +11,26 @@ let json = await res.json()
 let res2 = await fetch(`https://myanimelist.net/anime/${mal_id}`)
 if (!res2.ok) throw 'Not Found'
 let html = await res2.text()
-let animeingfo = `📚 ᴛɪᴛʟᴇ: ${title}
-🎆 ᴇᴘɪsᴏᴅᴇ: ${episodes}
-✉️ ᴛʀᴀɴsᴍɪsɪ: ${type}
+let animeingfo = `*${htki} ANIME INFO ${htka}*
+📚 TITLE: ${title}
+🎆 EPISODE: ${episodes}
+✉️ TRANSISI: ${type}
 
-🌟 ʀᴀᴛɪɴɢ: ${rated}
-🧮 sᴄᴏʀᴇ: ${score}
-👥 ᴍᴇᴍʙᴇʀs: ${members}
-💬 sɪɴᴏᴘsɪs: ${synopsis}
+🌟 RATING: ${rated}
+🧮 SCORE: ${score}
+👥 MEMBERS: ${members}
+💬 SINOPSIS: ${synopsis}
+🎆 LINK: ${url}
 `
-conn.sendHydrated(m.chat, `*${htki} ANIME INFO ${htka}*`, animeingfo, image_url, url, '🌎 ʟ ɪ ɴ ᴋ', null, null, [[null,null],[null,null],[null,null]], m)
+//conn.sendHydrated(m.chat, `*${htki} ANIME INFO ${htka}*`, animeingfo, image_url, url, '🌎 ʟ ɪ ɴ ᴋ', null, null, [[null,null],[null,null],[null,null]], m)
 
+conn.sendButton(m.chat, animeingfo, wm, image_url, [
+                ['Sewa Bot', `${usedPrefix}sewa`],
+                ['Menu', `${usedPrefix}menu`],
+            ], m)
 }
 handler.help = ['animeinfo <anime>']
-handler.tags = ['anime']
+handler.tags = ['anime', 'limitmenu']
 handler.command = /^(animeinfo)$/i
 handler.limit = true
 export default handler
