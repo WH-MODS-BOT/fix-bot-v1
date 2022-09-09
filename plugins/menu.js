@@ -498,11 +498,11 @@ const listMessage = {
             fileLength: fsizedoc,
             pageCount: fpagedoc,
             caption: text,
-            footer: titlebot + '\n By Wh-Mods-Dev',
+            footer: titlebot + '\n By YansenBOT',
             templateButtons: [
                 {
                     urlButton: {
-                        displayText: `SUBSCRIBE`,
+                        displayText: `Yt dev-bot`,
                         url: 'https://www.youtube.com/channel/UCMx4e8anOq_Olt2nMSv0Cow'
                     }
                 },
