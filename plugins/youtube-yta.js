@@ -5,7 +5,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if (!args || !args[0]) throw 'Uhm... urlnya mana?'
   let chat = global.db.data.chats[m.chat]
   const isY = /y(es)/gi.test(args[1])
-  const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
+  const { thumbnail, audio: _audio, title } = await await youtubedlv2(args[0]).catch(async _ => await youtubedl(args[0])).catch(async _ => await youtubedlv3(args[0]))
   const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
   let audio, source, res, link, lastError, isLimit
   for (let i in _audio) {
@@ -47,7 +47,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> <without message>`)
-handler.tags = ['downloader']
+handler.tags = ['downloader', 'limitmenu']
 handler.command = /^yt(a|mp3)$/i
 
 handler.exp = 0
