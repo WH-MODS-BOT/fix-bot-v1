@@ -37,19 +37,19 @@ global.sdc = '-' //discord
 global.snh = 'https://www.youtube.com/channel/UCMx4e8anOq_Olt2nMSv0Cow' // my youtube channel
 
 /*============== PAYMENT ==============*/
-global.pdana = '082127487538' //dana
-global.povo = '082127487538' //ovo
-global.pgopay = '082127487538' //gopay
-global.plinkaja = '082127487538' //link aja
-global.ppulsa = '082127487538' //telkomsel
-global.ppulsa2 = '082127487538' // kalau ada kartu lain isi aja
+global.pdana = '088213910439' //dana
+global.povo = '0888213910439' //ovo
+global.pgopay = '081319392423' //gopay
+global.plinkaja = '088213910439' //link aja
+global.ppulsa = '081319392423' //telkomsel
+global.ppulsa2 = '088213910439' // kalau ada kartu lain isi aja
 global.psaweria = 'https://saweria.com/mrw4h1d'
 
 /*============== NOMOR ==============*/
-global.nomorbot = '6282159957081'
-global.nomorown = '6282127487538'
-global.namebot = 'WH-MODS-BOT-V1'
-global.nameown = 'WH MODS DEV'
+global.nomorbot = '6283833965573'
+global.nomorown = '6281311777698'
+global.namebot = 'BOT RICKI STORE V11'
+global.nameown = 'RICKI STORE'
 
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
@@ -58,10 +58,10 @@ global.lolkey = '8e66d0934cf741bfd2182c16' // PUNYA WAHID 357d3c85079c4e0818731e
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['6282127487538', 'WH MODS DEV', true],
-  ['6282159957081', 'WH-MODS-BOT-V1', true],
-  ['6288298925386', 'WH-MODS-BOT-V2', true],
-  ['79917357842', 'WH-MODS-BOT-V3', true] //Ganti jd nomormu sama Namamu
+  ['6281311777698', 'RICKI STORE', true],
+  ['6283833965573', 'BOT RICKI STORE V11'', true],
+  ['6283833965573', 'BOT RICKI STORE V11', true],
+  ['6283833965573', 'BOT RICKI STORE V11', true] //Ganti jd nomormu sama Namamu
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
@@ -109,9 +109,9 @@ global.APIKeys = { // APIKey Here
 // Kata APIKEY itu isi dengan apikey lu sendiri, dengan beli ke website itu
 
 /*============== WATERMARK ==============*/
-global.wm = '                「 WH-MODS-BOT-V1 」' //Main Watermark
-global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘WH-MODS-BOT-V1 ˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.wm3 = '⫹⫺ WH-MODS-BOT-V1 '
+global.wm = '                「 BOT RICKI STORE V11 」' //Main Watermark
+global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘BOT RICKI STORE V11 ˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.wm3 = '⫹⫺ BOT RICKI STORE V11 '
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
 global.titlebot = `⫹⫺ WhatsApp Bot | By WH-MODS-DEV`
