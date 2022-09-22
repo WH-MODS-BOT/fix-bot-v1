@@ -63,9 +63,9 @@ Script ini untuk semua orang, bukan untuk Dijual. Jika dijual neraka menunggumu 
 
 ## `SETTING`
 
-- Owner Number [Here](https://github.com/WH-MODS-BOT/fix-bot-v2.0/blob/master/config.js#L1)
-- Owner Name [Here](https://github.com/WH-MODS-BOT/fix-bot-v2.0/blob/master/config.js#L1)
-- Bot Name [Here](https://github.com/WH-MODS-BOT/fix-bot-v2.0/blob/master/config.js#L1)
+- Owner Number [Here](https://github.com/WH-MODS-BOT/fix-bot-v1/blob/master/config.js#L1)
+- Owner Name [Here](https://github.com/WH-MODS-BOT/fix-bot-v1/blob/master/config.js#L1)
+- Bot Name [Here](https://github.com/WH-MODS-BOT/fix-bot-v1/blob/master/config.js#L1)
 ---------
 
 ## ```Heroku Buildpack```
@@ -83,8 +83,8 @@ $ pkg install git -y
 $ pkg install nodejs -y
 $ pkg install ffmpeg -y
 $ pkg install imagemagick -y
-$ git clone https://github.com/WH-MODS-BOT/fix-bot-v2.0
-$ cd fix-bot-v2.0
+$ git clone https://github.com/WH-MODS-BOT/fix-bot-v1
+$ cd fix-bot-v1
 $ npm i 
 ```
 If error try using yarn instead of npm, see [here](https://github.com/BochilGaming/games-wabot/tree/multi-device#if-npm-install-failed--try--using-yarn-instead-of-npm)
@@ -120,14 +120,14 @@ apt install wget curl git ffmpeg imagemagick build-essential libcairo2-dev libpa
 
 ---------
 
-[ INSTALLING NODEJS & ELAINABOT-MD]
+[ INSTALLING NODEJS & WH-MODS-BOT-MD]
 
 ```bash
 ubuntu
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 apt install -y nodejs gcc g++ make
-git clone https://github.com/WH-MODS-BOT/fix-bot-v2.0
-cd fix-bot-v2.0
+git clone https://github.com/WH-MODS-BOT/fix-bot-v1
+cd fix-bot-v1
 npm install
 npm update
 ```
@@ -142,8 +142,8 @@ npm update
 * Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/WH-MODS-BOT/fix-bot-v2.0
-cd fix-bot-v2.0
+git clone https://github.com/WH-MODS-BOT/fix-bot-v1
+cd fix-bot-v1
 npm install
 npm update
 ```
