@@ -119,10 +119,10 @@ global.author = '                「 XdyanBotz!  あ」'
 
 
 /*============== LOGO ==============*/
-global.thumb = 'https://i.ibb.co/1LhgnfC/IMG-20220926-061323-313.jpg' //Main Thumbnail
-global.imagebot = 'https://i.ibb.co/nstYYPZ/1663671988917.jpg'
+global.thumb = 'https://i.ibb.co/fNCPfxV/IMG-20220926-16240861.jpg' //Main Thumbnail
+global.imagebot = 'https://i.ibb.co/fNCPfxV/IMG-20220926-16240861.jpg'
 global.giflogo = 'https://telegra.ph/file/a46ab7fa39338b1f54d5a.mp4'
-global.thumbs = ['https://i.ibb.co/1LhgnfC/IMG-20220926-061323-313.jpg']
+global.thumbs = ['https://i.ibb.co/fNCPfxV/IMG-20220926-16240861.jpg']
 global.fla = 'https://i.ibb.co/XZrK6yQ/transformers.jpg'
 global.flaaa2 = [
 'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
