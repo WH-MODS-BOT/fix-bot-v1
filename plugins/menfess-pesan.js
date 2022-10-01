@@ -1,48 +1,139 @@
-let handler = async(m, { conn, text, usedPrefix }) => {
-let [number, pesan] = text.split `|`
-
-    if (!number) return conn.reply(m.chat, 'Maaf Format Anda Salah\n\nContoh:\n.menfess 6285766454089|hallo crush', m)
-    if (!pesan) return conn.reply(m.chat, 'Maaf Format Anda Salah\n\nContoh:\n.menfess 6285766454089|hallo crush', m)
-    if (text > 500) return conn.reply(m.chat, 'Teks Kepanjangan!', m)
-    
-    let user = global.db.data.users[m.sender]
-
-    let korban = `${number}`
-    var nomor = m.sender
-    let spam1 = `Hi Saya Bot Ada Yang Kirim Pesan Ke Kamu
-Seseorang Temanmu
-(Pengirim Rahasia)
-⬡──⬡─────────⬡──⬡
-📫Pengirim : Someone
-
-💌 Pesan : ${pesan}
-⬡──⬡─────────⬡──⬡
-Maaf Anda Belum Bisa Membalas ke Pengirim
-
-------------------------------------------
-
-▮PENGIRIM RAHASIA 」 
-Anda Ingin Mengirimkan Pesan ke pacar/sahabat/teman/doi/
-mantan?, tapi Tidak ingin tau siapa Pengirimnya?
-Kamu bisa menggunakan Bot ini
-Contoh Penggunaan: .menfess nomor|pesan untuknya
-Contoh: .menfess 628xxxxxxxxxx|hai owner`
-
-    conn.reply(korban + '@s.whatsapp.net', spam1, m)
-
-    let logs = `Sukses Mengirim Pesan
-👥 Dari : wa.me/${nomor.split("@s.whatsapp.net")[0]}
-⬡──⬡─────────⬡──⬡
-💌 Isi Pesan : ${pesan}
-⬡──⬡─────────⬡──⬡`
-
-    conn.reply(m.chat, logs, m)
+module.exports = {
+	name: ['menfes', 'stopmenfes'],
+	param: '< Coming Soon >',
+	cmd: ['menfes', 'stopmenfes'],
+	category: 'other',
+	desc: 'Berbicara kepada orang yang kamu suka secara anonim\n\nCara Penggunaan : .menfes nomor(diawali kode negara)|pesan',
+	private: true,
+	owner: true,
+	async handler(m, {conn, text, args}){
+		if(m.command == 'stopmenfes'){
+			const find = Object.values(db.data.menfes).find(id => [id.to, id.id].includes(m.sender))
+			if(!find) return m.reply('Room tidak ditemukan/anda tidak berada didalam room')
+			if(m.sender != find.id) return m.reply('Fitur ini hanya untuk pengirim pesan!')
+			m.reply('*MENFES*\nBerhasil meninggalkan obrolan')
+			await conn.sendMessage(find.to, {text: '*MENFES*\nPengirim telah meninggalkan obrolan'})
+			delete db.data.menfes[find.id]
+			await db.write()
+			return
+		}
+		if(!text) return m.reply('Example : .menfes 62895xxxxx|I Love You')
+		if(args[0] == 'accept' && m.type == "templateButtonReplyMessage"){
+			const find = Object.values(db.data.menfes).find(t => t.to == m.sender)
+			db.data.menfes[find.id].chatting = true
+			await db.write()
+			await m.reply('Anda menerima ajakan chatting dari dia\n\nGood Luck!')
+			const button = [
+			    {
+					quickReplyButton: {
+			            displayText: "Stop Chat",
+			            id: ".stopmenfes",
+			        },
+			    }
+      		];
+			return await conn.sendButton(find.id, 'Dia telah menerima ajakan chatting denganmu\n\nGood Luck Bro & Sis:', `Ingin stop chat? Silahkan klik tombol dibawah`, button)
+		}
+		else if(args[0] == 'decline' && m.type == "templateButtonReplyMessage"){
+			const find = Object.values(db.data.menfes).find(t => t.to == m.sender)
+			await m.reply('Anda menolak ajakan chatting dari dia!')
+			await conn.sendMessage(find.id, {text: `@${find.to.split('@')[0]} Menolak ajakan untuk chatting\n\nNT dan Tetap semangat bro & Sis:)`, withTag: true})
+			delete db.data.menfes[find.id]
+			await db.write()
+		}
+		const to = `${text.split('|')[0].replace(/\D/g, '')}@s.whatsapp.net`
+		const onWa =  await conn.onWhatsApp(to)
+		if(!onWa) return m.reply('Number not registered on whatsapp')
+		db.data.menfes[m.sender] = {
+			id: m.sender,
+			to: to,
+			chatting: false
+		}
+		await db.write()
+		const teks = `Halo ${await conn.getName(to)} 👋🏻\n Kamu mendapat pesan dari seseorang\n\n"${text.split('|')[1]}"`
+		const button = [
+		    {
+				quickReplyButton: {
+		            displayText: "Y",
+		            id: ".menfes accept",
+		        },
+		    },
+		    {
+		        quickReplyButton: {
+		            displayText: "N",
+		            id: ".menfes decline",
+		        },
+		    },
+      	];
+		await conn.sendButton(to, teks, `Ingin chatting bersama dia? Y/N`, button)
+		await m.reply('Pesan sudah dikirim ke target\n\nSilahkan tunggu jawaban dari dia:')
+	}
+}module.exports = {
+	name: ['menfes', 'stopmenfes'],
+	param: '< Coming Soon >',
+	cmd: ['menfes', 'stopmenfes'],
+	category: 'other',
+	desc: 'Berbicara kepada orang yang kamu suka secara anonim\n\nCara Penggunaan : .menfes nomor(diawali kode negara)|pesan',
+	private: true,
+	owner: true,
+	async handler(m, {conn, text, args}){
+		if(m.command == 'stopmenfes'){
+			const find = Object.values(db.data.menfes).find(id => [id.to, id.id].includes(m.sender))
+			if(!find) return m.reply('Room tidak ditemukan/anda tidak berada didalam room')
+			if(m.sender != find.id) return m.reply('Fitur ini hanya untuk pengirim pesan!')
+			m.reply('*MENFES*\nBerhasil meninggalkan obrolan')
+			await conn.sendMessage(find.to, {text: '*MENFES*\nPengirim telah meninggalkan obrolan'})
+			delete db.data.menfes[find.id]
+			await db.write()
+			return
+		}
+		if(!text) return m.reply('Example : .menfes 62895xxxxx|I Love You')
+		if(args[0] == 'accept' && m.type == "templateButtonReplyMessage"){
+			const find = Object.values(db.data.menfes).find(t => t.to == m.sender)
+			db.data.menfes[find.id].chatting = true
+			await db.write()
+			await m.reply('Anda menerima ajakan chatting dari dia\n\nGood Luck!')
+			const button = [
+			    {
+					quickReplyButton: {
+			            displayText: "Stop Chat",
+			            id: ".stopmenfes",
+			        },
+			    }
+      		];
+			return await conn.sendButton(find.id, 'Dia telah menerima ajakan chatting denganmu\n\nGood Luck Bro & Sis:', `Ingin stop chat? Silahkan klik tombol dibawah`, button)
+		}
+		else if(args[0] == 'decline' && m.type == "templateButtonReplyMessage"){
+			const find = Object.values(db.data.menfes).find(t => t.to == m.sender)
+			await m.reply('Anda menolak ajakan chatting dari dia!')
+			await conn.sendMessage(find.id, {text: `@${find.to.split('@')[0]} Menolak ajakan untuk chatting\n\nNT dan Tetap semangat bro & Sis:)`, withTag: true})
+			delete db.data.menfes[find.id]
+			await db.write()
+		}
+		const to = `${text.split('|')[0].replace(/\D/g, '')}@s.whatsapp.net`
+		const onWa =  await conn.onWhatsApp(to)
+		if(!onWa) return m.reply('Number not registered on whatsapp')
+		db.data.menfes[m.sender] = {
+			id: m.sender,
+			to: to,
+			chatting: false
+		}
+		await db.write()
+		const teks = `Halo ${await conn.getName(to)} 👋🏻\n Kamu mendapat pesan dari seseorang\n\n"${text.split('|')[1]}"`
+		const button = [
+		    {
+				quickReplyButton: {
+		            displayText: "Y",
+		            id: ".menfes accept",
+		        },
+		    },
+		    {
+		        quickReplyButton: {
+		            displayText: "N",
+		            id: ".menfes decline",
+		        },
+		    },
+      	];
+		await conn.sendButton(to, teks, `Ingin chatting bersama dia? Y/N`, button)
+		await m.reply('Pesan sudah dikirim ke target\n\nSilahkan tunggu jawaban dari dia:')
+	}
 }
-handler.help = ['menfess nomor|pesan']
-handler.tags = ['nocategory']
-
-handler.command = /^(menfess|confess|menfes|confes)$/i
-
-handler.limit = true
-handler.private = true
-export default handler
