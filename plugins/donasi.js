@@ -1,5 +1,10 @@
-let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
-let text = `
+import fetch from 'node-fetch'
+let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
+//let handler = async(m, { conn, text, usedPrefix, command }) => {
+//let pp = await conn.profilePictureUrl(nomorown + '@s.whatsapp.net', 'image')
+
+let str = `${global.wm}
+
 ┌─「 Donasi • Pulsa 」
 │ • *Telkomsel:* [${global.ppulsa}]
 ❏────
@@ -9,23 +14,20 @@ let text = `
 │ • *Gopay:* [${global.pgopay}]
 │ • *Ovo:* [${global.povo}]
 │ • *Link Aja:* [${global.plinkaja}]
-❏────
-`
-const templateButtons = [
-    {index: 1, urlButton: {displayText: '✨ Saweria', url: psaweria}},
-    {index: 2, urlButton: {displayText: '📷 Instagram', url: sig}},
-    {index: 3, urlButton: {displayText: '🌎 Official Group', url: sgc}},
-    {index: 4, quickReplyButton: {displayText: 'Menu', id: '.menu'}},
-    {index: 5, quickReplyButton: {displayText: 'Owner', id: '.owner'}},
-]
-let tm = {
-text: text,
-footer: global.wm,
-templateButtons: templateButtons,
-image: {url: fla + 'Donasi'}
-}
-conn.sendMessage(m.chat, tm, m)
-}
+❏────`
+let wibu = `https://telegra.ph/file/efbf6b53a658d683aaa71.jpg` 
+let thumb = await(await fetch(wibu)).buffer()
+conn.sendButtonDoc(m.chat, str, wm,'Sewa Bot','.sewa', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
+    mediaUrl: "https://Instagram.com/mhdkrnwnn_",
+    mediaType: "VIDEO",
+    description: "https://vt.tiktok.com/ZSR4Kw2fP/", 
+    title: 'WannTrue MultiDevice',
+    body: 'INSTAGRAM OFFICIAL',
+    thumbnail: thumb,
+    sourceUrl: sig
+  }
+  } }) 
+          }
 handler.help = ['donasi']
 handler.tags = ['info']
 handler.command = /^dona(te|si)$/i

@@ -2,26 +2,27 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text, usedPrefix, command }) => {
 let pp = await conn.profilePictureUrl(m.chat).catch(_ => null)
 
-let str = `*https://www.youtube.com/channel/UCMx4e8anOq_Olt2nMSv0Cow*
+let str = `*https://Instagram.com/mhdkrnwnn_*
 
-Pengen mentahan nya ?
-Nih ada santai bro....
-https://github.com/ImYanXiao/Elaina-MultiDevice
+Pengen Scriptnya ?
+Ada bre, santai...
+https://github.com/WH-MODS-BOT/fix-bot-v3
+Script di atas berbeda sama saya punya 
 
-Pengen yang udah di recode oleh owner?
-Script bot ini dijual bila kalian mau bisa chat owner
+Pengen ubah owner V2?
+Jika mau ubah owner V2 menjadi nomor owner kamu
+bisa chat owner di ⬇️
 
-wa.me/6282127487538`
-let wibu = `https://api-reysekha.herokuapp.com/api/random/cosplay?apikey=apirey` 
+wa.me/62895327999292`
+let wibu = `https://telegra.ph/file/efbf6b53a658d683aaa71.jpg` 
 let thumb = await(await fetch(wibu)).buffer()
-conn.sendButtonDoc(m.chat, str, wm,'Thankyou','Bilek', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: "https://Instagram.com/_ctzhid",
+conn.sendButtonDoc(m.chat, str, wm,'Ma aci ^_^','Y', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
+    mediaUrl: "https://Instagram.com/mhdkrnwnn_",
     mediaType: "VIDEO",
-    description: "https://www.instagram.com/p/CevoCg5hG-p/?utm_source=ig_web_copy_link", 
-    title: 'WH-MODS-DEV-V1 MultiDevice',
-    body: wm,
+    title: 'WannTrue-MultiDevice',
+    body: 'INSTAGRAM OFFICIAL',
     thumbnail: thumb,
-    sourceUrl: sgc
+    sourceUrl: sig
   }
   } }) 
           }

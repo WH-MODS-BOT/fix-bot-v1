@@ -26,21 +26,21 @@ let info = `
 ┊⫹⫺ *Normal:* _${pn}k (1 bulan)_
 ┊⫹⫺ *Pro:* _${pp}k (4 bulan)_
 ┊⫹⫺ *Vip:* _${pv}k (8 bulan)_                                               
-┊⫹⫺ *Permanent:* = _${ppm}k (Unlimited)_
+┊⫹⫺ *Permanent (jual script bot):* = _${ppm}k (Unlimited)_
 ╰═┅═━––––––๑
 
 *⫹⫺ PAYMENT:*
-• *Pulsa Telkomsel:* [${ppulsa}]
+• *Pulsa Tri:* [${ppulsa}]
 • *Dana:* [${pdana}]
 • *Gopay:* [${pgopay}]
 • *Ovo:* [${povo}]
 • *Link Aja:* [${plinkaja}]
 
 –––––– *🐾 Kebijakan* ––––––
-🗣️: Kak, Kok harganya mahal banget?
+🗣️: Bre, Kok harganya mahal banget?
 💬: Mau tawar menawar? boleh, silahkan chat owner aja
 
-🗣️: Scam ga nih kak?
+🗣️: Scam ga nih Bre?
 💬: Enggalah, Owner 100% Tepati janji #STAYHALAL
 
 ▌│█║▌║▌║║▌║▌║█│▌
@@ -62,7 +62,7 @@ const sections = [
 	    {title: "🌟 NORMAL", rowId: '.order *Paket:* NORMAL • Premium', description: 'PRICE: ' + pn + 'k (1 bulan)' },
 	{title: "🌟 PRO", rowId: '.order *Paket:* PRO • Premium', description: 'PRICE: ' + pp + 'k (4 bulan)' },
 	{title: "🌟 VIP", rowId: '.order *Paket:* VIP • Premium', description: 'PRICE: ' + pv + 'k (8 bulan)' },
-	{title: "🌟 PERMANENT", rowId: '.order *Paket:* PERMANENT • Premium', description: 'PRICE: ' + ppm + 'k (UNLIMITED)' },
+	{title: "🌟 PERMANENT (jual script bot)", rowId: '.order *Paket:* PERMANENT • Premium (jual script bot)', description: 'PRICE: ' + ppm + 'k (UNLIMITED)' },
 	]
     },
 ]
