@@ -37,19 +37,22 @@ global.sdc = '-' //discord
 global.snh = 'https://www.youtube.com/channel/UCMx4e8anOq_Olt2nMSv0Cow' // my youtube channel
 
 /*============== PAYMENT ==============*/
-global.pdana = '08XXXXXXXXXX' //dana
-global.povo = '08XXXXXXXXXX' //ovo
-global.pgopay = '08XXXXXXXXXX' //gopay
-global.plinkaja = '08XXXXXXXXXX' //link aja
-global.ppulsa = '08XXXXXXXXXX' //telkomsel
-global.ppulsa2 = '08XXXXXXXXXX' // kalau ada kartu lain isi aja
+global.pdana = '08657667656' //dana
+global.povo = '08887667777' //ovo
+global.pgopay = '08878866775' //gopay
+global.plinkaja = '087767766766' //link aja
+global.ppulsa = '087767766766' //telkomsel
+global.ppulsa2 = '087767766766' // kalau ada kartu lain isi aja
 global.psaweria = 'https://saweria.com/mrw4h1d'
 
 /*============== NOMOR ==============*/
-global.nomorbot = '628XXXXXXXXXX'
-global.nomorown = '628XXXXXXXXXX'
+global.nomorbot = '6289518377899'
+global.nomorown = '62895327999292'
+global.nomorown1 = '447710173736'
 global.namebot = 'WH-MODS-BOT-V1'
 global.nameown = 'WH MODS DEV'
+global.nameown1 = 'Facebook'
+global.nomorwa = '0'
 
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
